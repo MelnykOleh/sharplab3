@@ -1,0 +1,61 @@
+﻿@model IEnumerable<Address>
+@{
+    ViewData["Title"] = "Index";
+}
+
+@if(TempData["success"] != null)
+{
+    <h1>@TempData["success"]</h1>
+}
+
+<h1>Addresses</h1>
+<a asp-controller="Address" asp-action="Create" class="btn btn-primary">Add address</a>
+<table class="table table-bordered table-striped" style="width:100%">
+    <thead>
+        <tr>
+            <th>
+                ID
+            </th>
+            <th>
+                Street
+            </th>
+            <th>
+                House
+            </th>
+            <th>
+                Apartment
+            </th>
+            <th>
+
+            </th>
+            <th>
+
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var address in Model)
+        {
+            <tr>
+                <td>
+                    @address.ID
+                </td>
+                <td>
+                    @address.Street
+                </td>
+                <td>
+                    @address.House
+                </td>
+                <td>
+                    @address.Apartment
+                </td>
+                <td>
+                    <a asp-controller="Address" asp-action="Edit" asp-route-id="@address.ID" class="btn btn-warning">Edit address</a>
+                </td>
+                <td>
+                    <a asp-controller="Address" asp-action="Delete" asp-route-id="@address.ID" class="btn btn-danger">Delete address</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

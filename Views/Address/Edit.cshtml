@@ -1,0 +1,27 @@
+﻿@model Address
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit address</h1>
+<form method="post" asp-action="Edit">
+	<div class"mb-3">
+		<label>Street</label>
+		<input asp-for="Street" />
+		<span asp-validation-for="Street"></span>
+	</div>
+	<div class"mb-3">
+		<label>House</label>
+		<input asp-for="House" />
+		<span asp-validation-for="House"></span>
+	</div>
+	<div class"mb-3">
+		<label>Apartment</label>
+		<input asp-for="Apartment" />
+		<span asp-validation-for="Apartment"></span>
+	</div>
+	<button type="submit">Edit address</button>
+	<button><a asp-controller="Address" asp-action="Index">Return to all addresses</a></button>
+
+</form>
+

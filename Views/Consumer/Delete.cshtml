@@ -1,0 +1,42 @@
+﻿@model Consumer
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete information about consumer</h1>
+
+<form method="post" asp-action="DeletePOST">
+	<input asp-for="ID" hidden />
+	<div class"mb-3">
+		<label>Last name</label>
+		<input asp-for="LastName" disabled />
+	</div>
+	<div class"mb-3">
+		<label>Name</label>
+		<input asp-for="Name" disabled />
+	</div>
+	<div class"mb-3">
+		<label>Middle name</label>
+		<input asp-for="MiddleName" disabled/>
+	</div>
+	<div class"mb-3">
+		<label>Residents</label>
+		<input asp-for="NumberOfResidents" disabled />
+	</div>
+	<div class"mb-3">
+		<label>Square</label>
+		<input asp-for="Square" disabled />
+	</div>
+	<div class"mb-3">
+		<label>Address</label>
+		<input asp-for="Address" disabled />
+	</div>
+	<div class"mb-3">
+		<label>Account</label>
+		<input asp-for="PersonAccount" disabled />
+	</div>
+	<button type="submit">Delete information about cunsumer</button>
+	<button><a asp-controller="Cunsumer" asp-action="Index">Return to all cunsumers</a></button>
+
+</form>
+

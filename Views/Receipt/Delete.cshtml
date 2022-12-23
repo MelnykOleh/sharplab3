@@ -1,0 +1,54 @@
+﻿@model Receipt
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete information about receipt</h1>
+
+<form method="post" asp-action="DeletePOST">
+	<input asp-for="ID" hidden />
+	<div class"mb-3">
+		<label>Last name</label>
+		<input asp-for="Consumer.LastName" disabled />
+	</div>
+	<div class"mb-3">
+		<label>Name</label>
+		<input asp-for="Consumer.Name" disabled />
+	</div>
+	<div class"mb-3">
+		<label>Service</label>
+		<input asp-for="Service.ServiceName" disabled />
+	</div>
+	<div class"mb-3">
+		<label>Payment</label>
+		<input asp-for="TypeOfPayment" disabled />
+	</div>
+	<div class"mb-3">
+		<label>By Date</label>
+		<input asp-for="ByDate" disabled />
+	</div>
+	<div class"mb-3">
+		<label>Date of payment</label>
+		<input asp-for="DateOfPayment" disabled />
+	</div>
+	<div class"mb-3">
+		<label>Amount</label>
+		<input asp-for="Amount" disabled />
+	</div>
+	<div class"mb-3">
+		<label>Benefits</label>
+		<input asp-for="Benefits" disabled />
+	</div>
+	<div class"mb-3">
+		<label>Subsidies</label>
+		<input asp-for="Subsidies" disabled />
+	</div>
+	<div class"mb-3">
+		<label>Final amount</label>
+		<input asp-for="FinalAmount" disabled />
+	</div>
+	
+	<button type="submit">Delete book</button>
+	<button><a asp-controller="InfoBook" asp-action="Index">Return to all books</a></button>
+
+</form>

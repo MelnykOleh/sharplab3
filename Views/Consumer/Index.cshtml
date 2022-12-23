@@ -1,0 +1,90 @@
+﻿@model IEnumerable<Consumer>
+@{
+    ViewData["Title"] = "Index";
+}
+@if(TempData["success"] != null)
+{
+    <h1>@TempData["success"]</h1>
+}
+<h1>Consumers</h1>
+<a asp-controller="Consumer" asp-action="Create" class="btn btn-primary">Add new consumer</a>
+<table class="table table-bordered table-striped" style="width:100%">
+    <thead>
+        <tr>
+            <th>
+                ID
+            </th>
+            <th>
+                Last name
+            </th>
+            <th>
+                Name
+            </th>
+            <th>
+                Middle name
+            </th>
+            <th>
+                Residents
+            </th>
+            <th>
+                Square
+            </th>
+            <th>
+                Street
+            </th>
+            <th>
+                House
+            </th>
+            <th>
+                Apartment
+            </th>
+            <th>
+                Account
+            </th>
+            <th>
+
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var consumer in Model)
+        {
+            <tr>
+                <td>
+                    @consumer.ID
+                </td>
+                <td>
+                    @consumer.LastName
+                </td>
+                <td>
+                    @consumer.Name
+                </td>
+                <td>
+                    @consumer.MiddleName
+                </td>
+                <td>
+                    @consumer.NumberOfResidents
+                </td>
+                <td>
+                    @consumer.Square
+                </td>
+                <td>
+                    @consumer.Address.Street
+                </td>
+                <td>
+                    @consumer.Address.House
+                </td>
+                <td>
+                    @consumer.Address.Apartment
+                </td>
+                <td>
+                    @consumer.PersonAccount
+                </td>
+                <td>
+                    <a asp-controller="Consumer" asp-action="Delete" asp-route-id="@consumer.ID" class="btn btn-danger">Delete information</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

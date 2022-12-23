@@ -1,0 +1,61 @@
+﻿@model IEnumerable<Service>
+@{
+    ViewData["Title"] = "Index";
+}
+
+@if(TempData["success"] != null)
+{
+    <h1>@TempData["success"]</h1>
+}
+
+<h1>Services</h1>
+<a asp-controller="Service" asp-action="Create" class="btn btn-primary">Add service</a>
+<table class="table table-bordered table-striped" style="width:100%">
+    <thead>
+        <tr>
+            <th>
+                ID
+            </th>
+            <th>
+                Service
+            </th>
+            <th>
+                Per meter
+            </th>
+            <th>
+                Per person
+            </th>
+            <th>
+
+            </th>
+            <th>
+
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var service in Model)
+        {
+            <tr>
+                <td>
+                    @service.ID
+                </td>
+                <td>
+                    @service.ServiceName
+                </td>
+                <td>
+                    @service.PricePerSquareMeter
+                </td>
+                <td>
+                    @service.PricePerPerson
+                </td>
+                <td>
+                    <a asp-controller="Service" asp-action="Edit" asp-route-id="@service.ID" class="btn btn-warning">Edit service</a>
+                </td>
+                <td>
+                    <a asp-controller="Service" asp-action="Delete" asp-route-id="@service.ID" class="btn btn-danger">Delete service</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

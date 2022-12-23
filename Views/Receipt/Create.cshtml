@@ -1,0 +1,62 @@
+﻿@model Receipt
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Add new information about receipt</h1>
+
+<form method="post">
+	<div class"mb-3">
+		<label>Consumer</label>
+		<select asp-for="ConsumerID" asp-items="@ViewBag.Consumers">
+			<option>Choose consumer</option>
+		</select>
+		<span asp-validation-for="ConsumerID"></span>
+	</div>
+	<div class"mb-3">
+		<label>Service</label>
+		<select asp-for="ServiceID" asp-items="@ViewBag.Services">
+			<option>Choose service</option>
+		</select>
+		<span asp-validation-for="ServiceID"></span>
+	</div>
+	<div class"mb-3">
+		<label>Payment</label>
+		<input asp-for="TypeOfPayment" />
+		<span asp-validation-for="TypeOfPayment"></span>
+	</div>
+	<div class"mb-3">
+		<label>By date</label>
+		<input asp-for="ByDate" />
+		<span asp-validation-for="ByDate"></span>
+	</div>
+	<div class"mb-3">
+		<label>Date of payment</label>
+		<input asp-for="DateOfPayment" />
+		<span asp-validation-for="DateOfPayment"></span>
+	</div>
+	<div class"mb-3">
+		<label>Amount</label>
+		<input asp-for="Amount" />
+		<span asp-validation-for="Amount"></span>
+	</div>
+	<div class"mb-3">
+		<label>Benefits</label>
+		<input asp-for="Benefits" />
+		<span asp-validation-for="Benefits"></span>
+	</div>
+	<div class"mb-3">
+		<label>Subsidies</label>
+		<input asp-for="Subsidies" />
+		<span asp-validation-for="Subsidies"></span>
+	</div>
+	<div class"mb-3">
+		<label>Final amount</label>
+		<input asp-for="FinalAmount" />
+		<span asp-validation-for="FinalAmount"></span>
+	</div>
+	<button type="submit">Add new information about receipt</button>
+	<button><a asp-controller="Receipt" asp-action="Index">View all information about receipts</a></button>
+
+</form>

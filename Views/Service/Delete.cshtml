@@ -1,0 +1,25 @@
+﻿@model Service
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete service</h1>
+
+<form method="post" asp-action="DeletePOST">
+	<input asp-for="ID" hidden />
+	<div class"mb-3">
+		<label>Service</label>
+		<input asp-for="ServiceName" disabled />
+	</div>
+	<div class"mb-3">
+		<label>Per meter</label>
+		<input asp-for="PricePerSquareMeter" disabled />
+	</div>
+	<div class"mb-3">
+		<label>Per person</label>
+		<input asp-for="PricePerPerson" disabled />
+	</div>
+	<button type="submit">Delete service</button>
+	<button><a asp-controller="Service" asp-action="Index">Return to all services</a></button>
+
+</form>

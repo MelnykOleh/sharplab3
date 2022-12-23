@@ -1,0 +1,48 @@
+﻿@model Consumer
+
+
+<h1>Add new consumer</h1>
+
+<form method="post">
+	<div class"mb-3">
+		<label>Last name</label>
+		<input asp-for="LastName" />
+		<span asp-validation-for="LastName"></span>
+	</div>
+	<div class"mb-3">
+		<label>Name</label>
+		<input asp-for="Name" />
+		<span asp-validation-for="Name"></span>
+	</div>
+	<div class"mb-3">
+		<label>Middle name</label>
+		<input asp-for="MiddleName" />
+		<span asp-validation-for="MiddleName"></span>
+	</div>
+	<div class"mb-3">
+		<label>Residents</label>
+		<input asp-for="NumberOfResidents" />
+		<span asp-validation-for="NumberOfResidents"></span>
+	</div>
+	<div class"mb-3">
+		<label>Square</label>
+		<input asp-for="Square" />
+		<span asp-validation-for="Square"></span>
+	</div>
+	<div class"mb-3">
+		<label>Address</label>
+		<select asp-for="AddressID" asp-items="@ViewBag.Addresses">
+			<option>Choose address</option>
+		</select>
+		<span asp-validation-for="AddressID"></span>
+	</div>
+	<div class"mb-3">
+		<label>Account</label>
+		<input asp-for="PersonAccount" />
+		<span asp-validation-for="PersonAccount"></span>
+	</div>
+	
+	<button type="submit">Add new consumer</button>
+	<button><a asp-controller="Consumer" asp-action="Index">Return to all consumers</a></button>
+
+</form>

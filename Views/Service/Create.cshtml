@@ -1,0 +1,23 @@
+﻿@model Service
+
+<h1>Add new service</h1>
+<form method="post">
+	<div class"mb-3">
+		<label>Service</label>
+		<input asp-for="ServiceName" />
+		<span asp-validation-for="ServiceName"></span>
+	</div>
+	<div class"mb-3">
+		<label>Per meter</label>
+		<input asp-for="PricePerSquareMeter" />
+		<span asp-validation-for="PricePerSquareMeter"></span>
+	</div>
+	<div class"mb-3">
+		<label>Per person</label>
+		<input asp-for="PricePerPerson" />
+		<span asp-validation-for="PricePerPerson"></span>
+	</div>
+	<button type="submit">Add service</button>
+	<button><a asp-controller="Service" asp-action="Index">Return to all services</a></button>
+
+</form>

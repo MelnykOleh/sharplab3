@@ -1,0 +1,25 @@
+﻿@model Address
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete address</h1>
+
+<form method="post" asp-action="DeletePOST">
+	<input asp-for="ID" hidden />
+	<div class"mb-3">
+		<label>Street</label>
+		<input asp-for="Street" disabled />
+	</div>
+	<div class"mb-3">
+		<label>House</label>
+		<input asp-for="House" disabled />
+	</div>
+	<div class"mb-3">
+		<label>Apartment</label>
+		<input asp-for="Apartment" disabled />
+	</div>
+	<button type="submit">Delete address</button>
+	<button><a asp-controller="Address" asp-action="Index">Return to all addresses</a></button>
+
+</form>

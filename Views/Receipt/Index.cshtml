@@ -1,0 +1,91 @@
+﻿@model IEnumerable<Receipt>
+@{
+    ViewData["Title"] = "Index";
+}
+@if(TempData["success"] != null)
+{
+    <h1>@TempData["success"]</h1>
+}
+
+<h1>Information about receipts</h1>
+<a asp-controller="Receipt" asp-action="Create" class="btn btn-primary">Add new information about receipt</a>
+<table class="table table-bordered table-striped" style="width:100%">
+    <thead>
+        <tr>
+            <th>
+                Surname consumer
+            </th>
+            <th>
+                Name consumer
+            </th>
+            <th>
+                Service
+            </th>
+            <th>
+                Payment
+            </th>
+            <th>
+                By date
+            </th>
+            <th>
+                Date of payment
+            </th>
+            <th>
+                Amount
+            </th>
+            <th>
+                Benefits
+            </th>
+            <th>
+                Subsidies
+            </th>
+            <th>
+                FinalAmount
+            </th>
+            <th>
+
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var receipt in Model)
+        {
+            <tr>
+                <td>
+                    @receipt.Consumer.LastName
+                </td>
+                <td>
+                    @receipt.Consumer.Name
+                </td>
+                <td>
+                    @receipt.Service.ServiceName
+                </td>
+                <td>
+                    @receipt.TypeOfPayment
+                </td>
+                <td>
+                    @receipt.ByDate
+                </td>
+                <td>
+                    @receipt.DateOfPayment
+                </td>
+                <td>
+                    @receipt.Amount
+                </td>
+                <td>
+                    @receipt.Benefits
+                </td>
+                <td>
+                    @receipt.Subsidies
+                </td>
+                <td>
+                    @receipt.FinalAmount
+                </td>
+                <td>
+                    <a asp-controller="Receipt" asp-action="Delete" asp-route-id="@receipt.ID" class="btn btn-danger">Delete information about receipt</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
